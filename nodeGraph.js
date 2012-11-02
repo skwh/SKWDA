@@ -51,6 +51,10 @@ Graph.prototype.findEdge = function(node1,node2) {
 	}
 	return edge;
 }
+Graph.prototype.loadSet = function(graphSet) {
+	this.nodes = graphSet.nodes;
+	this.edges = graphSet.edges;	
+}
 var gGraph = function(graph, canvas, canvasContext) { 
 	this.graph = graph; 
 	this.canvas = canvas; 
@@ -118,4 +122,8 @@ gGraph.prototype.drawPath = function(Path,c) {
 			}
 		}
 	}
+}
+var graphSet = function(nodes, edges) {
+	this.nodes = nodes;
+	this.edges = edges; 
 }
