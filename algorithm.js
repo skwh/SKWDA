@@ -37,6 +37,9 @@ function pathFinder(startNode,endNode,sourceGraph) {
 		}
 		return [AdjacentNodes,AdjacentLengths]; //return nodes and lengths grouped into an array
 	}
+	if (startNode == endNode) {
+		return [startNode];	
+	}
 	initialize_single_source(sourceGraph,startNode);
 	while (vS.length != 0) { //while there are still nodes to be sorted through
 		vS = vS.sort(function(a,b) { return a.distance-b.distance; }); //sort them by distance
