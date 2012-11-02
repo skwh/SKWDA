@@ -18,5 +18,6 @@ public class Runtime {
 		simpleGraph.setNodes(graphNode);
 		Set<Edge> graphEdge = null;
 		graphEdge.add(new Edge((Node) graphNode.toArray()[0], (Node) graphNode.toArray()[5], 14));
+		//TODO: Continue example
 	}
 }
