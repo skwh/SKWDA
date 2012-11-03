@@ -39,5 +39,20 @@
                 <option value="6">Node 6</option>
             </select>
         </div>
+        <script type="text/javascript">
+        document.getElementById('s3').addEventListener('change',(function(event) {
+			var element = event.srcElement;
+			var selectedMap = window[element.value];
+			selectedMap.setUp();
+			var nodeLength = selectedMap.nodes.length;
+			document.getElementById('s1').innerHTML = "";
+			document.getElementById('s2').innerHTML = "";
+			for (var i=0;i<nodeLength;i++) {
+				var number = selectedMap.nodes[i].n;
+				document.getElementById('s1').innerHTML += "<option value='" + number + "'> Node " + number + "</option>";
+				document.getElementById('s2').innerHTML += "<option value='" + number + "'> Node " + number + "</option>";
+			}
+		}),false);
+        </script>
     </body>
 </html>
