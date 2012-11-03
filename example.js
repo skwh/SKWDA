@@ -39,7 +39,7 @@ var graph3 = new graphSet([],[]);
 graph3.setUp = function() {
 	this.nodes = [];
 	this.edges = [];
-	for (var i=0;i<12;i++) {
+	for (var i=0;i<16;i++) {
 		this.nodes.push(new Node(i+1));
 	}
 	this.edges.push(new Edge(this.nodes[0],this.nodes[1],5));
@@ -77,7 +77,7 @@ function runMe(selectedMap) {
 	simpleGraphicalGraph.draw(simpleGraphicalGraph.ctxt);
 }
 function pathMe() {
-	var sMap = eval(document.getElementById('s3').value);
+	var sMap = window[document.getElementById('s3').value];
 	runMe(sMap);
 	var node1 = document.getElementById('s1').value;
 	var node2 = document.getElementById('s2').value;
