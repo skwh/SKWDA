@@ -4,7 +4,7 @@ function pathFinder(startNode,endNode,sourceGraph) {
 	function initialize_single_source(graph,node) { //initializes graph, starting point, and all other nodes
 		for (var v in graph.nodes) {
 			if (v instanceof Node) {
-				v.distance = infinity;
+				v.distance = Infinity;
 				v.pi = null;
 			}
 		}

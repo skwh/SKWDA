@@ -1,8 +1,7 @@
 // Node Graph Classes and Methods Copyright SomekidwithHTML 2012.
-var infinity = 100000000000000000;
 var Node = function(name) { 
 	this.n = name; 
-	this.distance = infinity, 
+	this.distance = Infinity, 
 	this.visited = false, 
 	this.edges = [], 
 	this.pi = null; 
