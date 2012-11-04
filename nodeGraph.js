@@ -72,7 +72,9 @@ gGraph.prototype.draw = function(c) {
 		c.beginPath();
 		c.arc(x,y,NODE_RADIUS,0,2*Math.PI);
 		c.stroke();
-		c.fillText(String(this.graph.nodes[i].n),x-3,y+3);
+		(this.graph.nodes[i].n > 10)?
+			c.fillText(String(this.graph.nodes[i].n),x-NODE_RADIUS,y+3)
+		   :c.fillText(String(this.graph.nodes[i].n),x-3,y+3);
 		this.graphicalNodes.push(new gNode(this.graph.nodes[i],x,y,NODE_RADIUS));
 	}
 	for (var i=0;i<this.graph.edges.length;i++) {
@@ -104,7 +106,9 @@ gGraph.prototype.drawPath = function(Path,c) {
 				c.beginPath();
 				c.arc(Node.x,Node.y,NODE_RADIUS,0,2*Math.PI);
 				c.stroke();
-				c.fillText(String(Node.node.n),Node.x-3,Node.y+3);
+				(Node.node.n > 10)?
+					c.fillText(String(Node.node.n),Node.x-NODE_RADIUS,Node.y+3)
+				   :c.fillText(String(Node.node.n),Node.x-3,Node.y+3);
 			}
 		}
 	}
