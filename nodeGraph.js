@@ -32,6 +32,9 @@ var Graph = function(nodes,edges) {
 	this.edges = edges; 
 }
 Graph.prototype.findEdge = function(node1,node2) {
+	if (!(node1 instanceof Node) || !(node2 instanceof Node)) {
+		return null;	
+	}
 	var edge = null;
 	for (var i=0;i<node1.edges.length;i++) {
 		var Edge = node1.edges[i];
@@ -50,9 +53,20 @@ Graph.prototype.findEdge = function(node1,node2) {
 	}
 	return edge;
 }
-Graph.prototype.loadSet = function(graphSet) {
-	this.nodes = graphSet.nodes;
-	this.edges = graphSet.edges;	
+Graph.prototype.loadSet = function(gS) {
+	if (!(gS instanceof graphSet)) {
+		return;
+	}
+	this.nodes = gS.nodes;
+	this.edges = gS.edges;	
+}
+Graph.prototype.copy = function(newGraph) {
+	if (!(newGraph instanceof Graph)) {
+		return;	
+	}
+	newGraph.nodes = this.nodes;
+	newGraph.edges = this.edges;
+	return newGraph;	
 }
 var gGraph = function(graph, canvas, canvasContext) { 
 	this.graph = graph; 
@@ -130,3 +144,5 @@ var graphSet = function(nodes, edges) {
 	this.nodes = nodes;
 	this.edges = edges; 
 }
+var Settings = new Object();
+Settings.showPath = false;
