@@ -1,5 +1,12 @@
 *.class
-
+*.sdf
+*.sln
+cSKWDA/ipch
+*.suo
+*.opensdf
+*.vcxproj
+*.filters
+*.user
 # Package Files #
 *.jar
 *.war
@@ -8,4 +15,4 @@
 jSKWDA/.classpath
 jSKWDA/.project
 jSKWDA/.settings
-.gitignore
+*.gitignore
