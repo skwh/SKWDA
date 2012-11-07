@@ -7,10 +7,9 @@ class Node {
 private:
 	long int distance;
 	std::string name;
-	Node Pi(void);
+	Node* Pi;
 	bool visited;
 	std::vector<Edge> edges;
-	Node(void);
 public:
 	Node(std::string n);
 	~Node(void);
