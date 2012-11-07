@@ -3,7 +3,7 @@
 #include "Edge.h"
 #include <string>
 
-Node::Node(void){}
+
 Node::Node(std::string n) {
 	name = n;
 }
@@ -16,11 +16,23 @@ void Node::setAsEdge(Edge e) {
 void Node::setName(std::string n) {
 	name = n;
 }
-
+std::string Node::getName() {
+	return name;
+}
 void Node::setDistance(int d) {
 	distance = d;
 }
+int Node::getDistance() {
+	return distance;
+}
 
 void Node::setPi(Node n) {
-	Pi = n;
+	*Pi = n;
+}
+Node Node::getPi() {
+	return *Pi;
+}
+
+void Node::setVisited(bool b) {
+	visited = b;
 }
